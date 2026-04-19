@@ -1,6 +1,8 @@
-# TCC Agent — Agentic Academic Research & Writing Framework
+# Open Academic Agent — Agentic Academic Research & Writing Framework
 
-An agentic framework that accelerates the production of academic conclusion papers (TCCs) by automating repetitive research and writing tasks. Researchers and students focus on learning and deepening their work; the agent handles structure, formatting, drafting, and publishing.
+An agentic framework that accelerates the production of academic conclusion papers by automating repetitive research and writing tasks. Researchers and students focus on learning and deepening their work; the agent handles structure, formatting, drafting, and publishing.
+
+> **Norm compatibility:** currently supports Brazilian academic writing norms (ABNT). Contributions to support other norms and models are welcome.
 
 ---
 
@@ -49,7 +51,7 @@ Starts an agentic research session. The agent searches, summarizes, and structur
 To use documents from your local library, place them in `docs/` before running the command — see the [docs/ section](#docs--research-documents) below.
 
 ### `/write [research-file] [segment]`
-Drafts a specific section of the paper (e.g., `methodology`, `introduction`) based on the given research file. Output is saved in `write/` with a status header:
+Drafts a specific section of the conclusion paper (e.g., `methodology`, `introduction`) based on the given research file. Output is saved in `write/` with a status header:
 - `pending` — awaiting human review
 - `approved` — validated by the researcher
 - `committed` — already consolidated into the final document
@@ -111,7 +113,7 @@ You can reference the file directly in the conversation or copy and paste its co
 
 ## Dependencies
 
-This framework runs entirely inside **[Claude Code](https://claude.ai/code)** — no other AI tool or model is supported.
+This framework currently runs inside **[Claude Code](https://claude.ai/code)**. Contributions to support other models are welcome.
 
 | Dependency | Required for | Install |
 |---|---|---|
@@ -127,12 +129,12 @@ This framework runs entirely inside **[Claude Code](https://claude.ai/code)** �
 
 ## Quick Start
 
-1. **Fork the repository** — create your own copy of the framework on GitHub to version your TCC independently:
+1. **Fork the repository** — create your own copy of the framework on GitHub to version your conclusion paper independently:
    ```
    # On GitHub, click "Fork", then clone your fork:
-   git clone https://github.com/your-username/tcc.git
-   cd tcc
-   git remote add upstream https://github.com/original-repo/tcc.git
+   git clone https://github.com/your-username/open-academic-agent.git
+   cd open-academic-agent
+   git remote add upstream https://github.com/jeansouzak/open-academic-agent.git
    ```
 
 2. Place your reference documents in the `docs/` folder (articles, PDFs, notes).
@@ -142,7 +144,7 @@ This framework runs entirely inside **[Claude Code](https://claude.ai/code)** �
    /research What are the applications of machine learning in healthcare?
    ```
 
-4. Write a section based on the research:
+4. Write a section of the conclusion paper based on the research:
    ```
    /write research/ml-healthcare.md introduction
    ```
