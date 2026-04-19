@@ -1,0 +1,7 @@
+# Research documents — may contain copyrighted material
+docs/*
+!docs/.gitkeep
+
+# Personal prompts — kept locally, not versioned by default
+prompts/*
+!prompts/.gitkeep
