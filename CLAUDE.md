@@ -198,6 +198,7 @@ Source idea in your own words, no quotes, with author and date.
 
 The agent operates in **draft → student review → approval** cycles:
 
+0. **Initialization**: run `/init` once at the start of a new project — it asks guided questions and writes a `## Research Context` section to this file. The agent uses that section to maintain awareness of the topic, area, problem, and approach across all sessions. Do not edit that section manually; run `/init` again to update it.
 1. **Intake**: collect from the student the topic, objectives, target audience, advisor, and deadline
 2. **Planning**: propose structure and production schedule section by section
 3. **Production**: generate a draft for each section based on student-provided inputs
