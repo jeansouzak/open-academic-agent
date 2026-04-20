@@ -77,6 +77,14 @@ dist/
   2-release-paper.pdf
 ```
 
+### `/format [URL | docs/<file> | "plain-language adjustment"]`
+Refines the formatting rules used when writing and generating the paper. Accepts three input types:
+- **URL** — fetches a public document (e.g., your university's TCC formatting guide) and extracts the rules
+- **`docs/<file>`** — reads a local file from your `docs/` folder
+- **Plain-language text** — applies a specific adjustment (e.g., `"left margin 4 cm"`, `"Times New Roman font"`)
+
+Changes are compared against the current rules and shown to you before being applied. Once confirmed, `/format` updates both `CLAUDE.md` and the internal writing rules so that every subsequent `/write` produces output that matches your institution's standards. Run without arguments to see the current formatting rules.
+
 ---
 
 ## Folder Structure

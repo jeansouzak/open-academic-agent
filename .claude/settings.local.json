@@ -4,7 +4,9 @@
       "Edit(CLAUDE.md)",
       "Edit(/.claude/skills/research/**)",
       "Edit(/.claude/skills/write/**)",
-      "Edit(/.claude/skills/release/**)"
+      "Edit(/.claude/skills/release/**)",
+      "Edit(/.claude/skills/conclusion-paper-writer/rules/**)",
+      "Edit(/.claude/skills/format/**)"
     ]
   }
 }
