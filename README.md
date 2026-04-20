@@ -26,6 +26,7 @@ Each stage is driven by a slash command — the agent executes, the human review
 
 ```mermaid
 flowchart LR
+    I("⚙️ /init"):::agent
     R("🔍 /research"):::agent
     W("✍️ /write"):::agent
     A("👤 /approve"):::human
@@ -33,7 +34,7 @@ flowchart LR
     P("🚀 /publish"):::agent
     RL("📄 /release"):::agent
 
-    R --> W --> A --> C --> P --> RL
+    I --> R --> W --> A --> C --> P --> RL
 
     classDef agent fill:#dbeafe,stroke:#3b82f6,color:#1e40af
     classDef human fill:#fef3c7,stroke:#f59e0b,color:#92400e
@@ -44,6 +45,9 @@ flowchart LR
 ---
 
 ## Commands
+
+### `/init`
+Initializes the research context for a new academic project. Asks guided questions about your research topic, area, problem, and approach, then saves a **Research Context** section to `CLAUDE.md` so the agent always knows what you are working on. Run this **once** before starting any other command.
 
 ### `/research [prompt or docs]`
 Starts an agentic research session. The agent searches, summarizes, and structures findings using a research template, then saves the result in the `research/` folder.
@@ -129,6 +133,8 @@ This framework currently runs inside **[Claude Code](https://claude.ai/code)**. 
 
 ## Quick Start
 
+### Starting a new project
+
 1. **Fork the repository** — create your own copy of the framework on GitHub to version your conclusion paper independently:
    ```
    # On GitHub, click "Fork", then clone your fork:
@@ -137,34 +143,39 @@ This framework currently runs inside **[Claude Code](https://claude.ai/code)**. 
    git remote add upstream https://github.com/jeansouzak/open-academic-agent.git
    ```
 
-2. Place your reference documents in the `docs/` folder (articles, PDFs, notes).
+2. **Initialize your research context** — the agent will guide you through the key questions about your topic:
+   ```
+   /init
+   ```
 
-3. Start a research session:
+3. Place your reference documents in the `docs/` folder (articles, PDFs, notes).
+
+4. Start a research session:
    ```
    /research What are the applications of machine learning in healthcare?
    ```
 
-4. Write a section of the conclusion paper based on the research:
+5. Write a section of the conclusion paper based on the research:
    ```
    /write research/ml-healthcare.md introduction
    ```
 
-5. Open `write/introduction-<date>.md`, review it, then approve:
+6. Open `write/introduction-<date>.md`, review it, then approve:
    ```
    /approve write/introduction-<date>.md
    ```
 
-6. Consolidate into the final document:
+7. Consolidate into the final document:
    ```
    /commit write/introduction-<date>.md
    ```
 
-7. When ready to save progress to your repository:
+8. When ready to save progress to your repository:
    ```
    /publish
    ```
 
-8. To generate a release PDF:
+9. To generate a release PDF:
    ```
    /release
    ```
