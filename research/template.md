@@ -1,6 +1,7 @@
 ---
 title: <topic>
 date: <YYYY-MM-DD>
+keywords: <keyword1, keyword2, keyword3>
 sources:
   - type: web | file
     ref: <URL or filename>
